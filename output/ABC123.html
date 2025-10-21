@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d0cac75b82471b7411fc74807231002c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d0cac75b82471b7411fc74807231002c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d0cac75b82471b7411fc74807231002c = L.map(
+                "map_d0cac75b82471b7411fc74807231002c",
+                {
+                    center: [47.1625, 19.5033],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7c654c5ff679e82a033f9a7cf0e9b395 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7c654c5ff679e82a033f9a7cf0e9b395.addTo(map_d0cac75b82471b7411fc74807231002c);
+        
+    
+            var tile_layer_041d4d98f4385aeae1077128eb344623 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_0967ee8b9e0cfdcd423bb8e2bc7bd4d0 = new L.Control.MiniMap(
+                tile_layer_041d4d98f4385aeae1077128eb344623,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": false,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_d0cac75b82471b7411fc74807231002c.addControl(mini_map_0967ee8b9e0cfdcd423bb8e2bc7bd4d0);
+        
+    
+
+            var geocoderOpts_geocoder_30dce6d63067a2145bc08fc3e9edce41 = {
+  "collapsed": false,
+  "position": "topright",
+  "defaultMarkGeocode": true,
+  "zoom": 11,
+  "provider": "nominatim",
+  "providerOptions": {
+},
+};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_30dce6d63067a2145bc08fc3e9edce41 = geocoderOpts_geocoder_30dce6d63067a2145bc08fc3e9edce41["provider"];
+
+            var customGeocoder_geocoder_30dce6d63067a2145bc08fc3e9edce41 = L.Control.Geocoder[ geocoderName_geocoder_30dce6d63067a2145bc08fc3e9edce41 ](
+                geocoderOpts_geocoder_30dce6d63067a2145bc08fc3e9edce41['providerOptions']
+            );
+            geocoderOpts_geocoder_30dce6d63067a2145bc08fc3e9edce41["geocoder"] = customGeocoder_geocoder_30dce6d63067a2145bc08fc3e9edce41;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_30dce6d63067a2145bc08fc3e9edce41
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_30dce6d63067a2145bc08fc3e9edce41['zoom'] || map_d0cac75b82471b7411fc74807231002c.getZoom();
+                map_d0cac75b82471b7411fc74807231002c.setView(e.geocode.center, zoom);
+            }).addTo(map_d0cac75b82471b7411fc74807231002c);
+
+        
+    
+            var marker_cd5853703b275fb2495b3fa1f8c0716f = L.marker(
+                [46.691098, 18.840737],
+                {
+}
+            ).addTo(map_d0cac75b82471b7411fc74807231002c);
+        
+    
+            var icon_f535f1d1c490d503ab9d92611830e60e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8833602a71a5225c688525fa79ff0c20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3235fc4dd2d5c107cdaa4517442f8203 = $(`<div id="html_3235fc4dd2d5c107cdaa4517442f8203" style="width: 100.0%; height: 100.0%;"><div style="width:250px;"><b>Hely:</b> Paks<br><b>Időpont:</b> 2025-08-25 06:50:56.220000<br><b>Súly: </b>44300 kg</div></div>`)[0];
+                popup_8833602a71a5225c688525fa79ff0c20.setContent(html_3235fc4dd2d5c107cdaa4517442f8203);
+            
+        
+
+        marker_cd5853703b275fb2495b3fa1f8c0716f.bindPopup(popup_8833602a71a5225c688525fa79ff0c20)
+        ;
+
+        
+    
+    
+            marker_cd5853703b275fb2495b3fa1f8c0716f.bindTooltip(
+                `<div>
+                     Több infóért kattints!
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cd5853703b275fb2495b3fa1f8c0716f.setIcon(icon_f535f1d1c490d503ab9d92611830e60e);
+            
+    
+            var marker_5f07d2b58189c8a182ce57d292b11404 = L.marker(
+                [46.609554, 18.824944],
+                {
+}
+            ).addTo(map_d0cac75b82471b7411fc74807231002c);
+        
+    
+            var icon_88b65d559f4774731cc3e8b37a130519 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b02269934457e4847ae2005c9e7b10d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d971f76a1f8540c43d22048edc28a618 = $(`<div id="html_d971f76a1f8540c43d22048edc28a618" style="width: 100.0%; height: 100.0%;"><div style="width:250px;"><b>Hely:</b> Paks<br><b>Időpont:</b> 2025-08-25 06:13:03.863000<br><b>Súly: </b>41900 kg</div></div>`)[0];
+                popup_1b02269934457e4847ae2005c9e7b10d.setContent(html_d971f76a1f8540c43d22048edc28a618);
+            
+        
+
+        marker_5f07d2b58189c8a182ce57d292b11404.bindPopup(popup_1b02269934457e4847ae2005c9e7b10d)
+        ;
+
+        
+    
+    
+            marker_5f07d2b58189c8a182ce57d292b11404.bindTooltip(
+                `<div>
+                     Több infóért kattints!
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f07d2b58189c8a182ce57d292b11404.setIcon(icon_88b65d559f4774731cc3e8b37a130519);
+            
+    
+            var marker_08cf59a25b3ebc417b444ee65774244b = L.marker(
+                [46.513242, 18.774819],
+                {
+}
+            ).addTo(map_d0cac75b82471b7411fc74807231002c);
+        
+    
+            var icon_02717e695e9acd6af59ed49269455edf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8464b8638ff44d3b5b6894f1f70b49a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80fda0a8a8cf33a1bc3a1de7688ed4a1 = $(`<div id="html_80fda0a8a8cf33a1bc3a1de7688ed4a1" style="width: 100.0%; height: 100.0%;"><div style="width:250px;"><b>Hely:</b> Dunaszentgyörgy<br><b>Időpont:</b> 2025-08-25 02:47:18.671000<br><b>Súly: </b>18700 kg</div></div>`)[0];
+                popup_8464b8638ff44d3b5b6894f1f70b49a2.setContent(html_80fda0a8a8cf33a1bc3a1de7688ed4a1);
+            
+        
+
+        marker_08cf59a25b3ebc417b444ee65774244b.bindPopup(popup_8464b8638ff44d3b5b6894f1f70b49a2)
+        ;
+
+        
+    
+    
+            marker_08cf59a25b3ebc417b444ee65774244b.bindTooltip(
+                `<div>
+                     Több infóért kattints!
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08cf59a25b3ebc417b444ee65774244b.setIcon(icon_02717e695e9acd6af59ed49269455edf);
+            
+    
+            var marker_c2cb3a00b92388ff4f39a088414dce84 = L.marker(
+                [46.465171, 18.711843],
+                {
+}
+            ).addTo(map_d0cac75b82471b7411fc74807231002c);
+        
+    
+            var icon_de254927d98675106bfa70f11e85c934 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_faa387fdc5009455fd7b9db6b52be01f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b02664ff07dafbb55fa82ca880b2067 = $(`<div id="html_0b02664ff07dafbb55fa82ca880b2067" style="width: 100.0%; height: 100.0%;"><div style="width:250px;"><b>Hely:</b> Szedres<br><b>Időpont:</b> 2025-08-25 02:18:26.518000<br><b>Súly: </b>12500 kg</div></div>`)[0];
+                popup_faa387fdc5009455fd7b9db6b52be01f.setContent(html_0b02664ff07dafbb55fa82ca880b2067);
+            
+        
+
+        marker_c2cb3a00b92388ff4f39a088414dce84.bindPopup(popup_faa387fdc5009455fd7b9db6b52be01f)
+        ;
+
+        
+    
+    
+            marker_c2cb3a00b92388ff4f39a088414dce84.bindTooltip(
+                `<div>
+                     Több infóért kattints!
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c2cb3a00b92388ff4f39a088414dce84.setIcon(icon_de254927d98675106bfa70f11e85c934);
+            
+    
+            var marker_c1bc617d6c88100c61fbdb62794f46a5 = L.marker(
+                [46.419669, 18.728837],
+                {
+}
+            ).addTo(map_d0cac75b82471b7411fc74807231002c);
+        
+    
+            var icon_0f1572b765b8b801fa8c634089ece245 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f91596124208293291634c51b6ade797 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5f65e7d4f0d2bc52a75522e4569fd34 = $(`<div id="html_f5f65e7d4f0d2bc52a75522e4569fd34" style="width: 100.0%; height: 100.0%;"><div style="width:250px;"><b>Hely:</b> Mözs<br><b>Időpont:</b> 2025-08-21 07:27:15.998000<br><b>Súly: </b>0 kg</div></div>`)[0];
+                popup_f91596124208293291634c51b6ade797.setContent(html_f5f65e7d4f0d2bc52a75522e4569fd34);
+            
+        
+
+        marker_c1bc617d6c88100c61fbdb62794f46a5.bindPopup(popup_f91596124208293291634c51b6ade797)
+        ;
+
+        
+    
+    
+            marker_c1bc617d6c88100c61fbdb62794f46a5.bindTooltip(
+                `<div>
+                     Több infóért kattints!
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c1bc617d6c88100c61fbdb62794f46a5.setIcon(icon_0f1572b765b8b801fa8c634089ece245);
+            
+</script>
+</html>
